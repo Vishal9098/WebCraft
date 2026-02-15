@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebCraft Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f7fc;
+color:#222;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+background:rgba(10,30,80,0.95);
+padding:15px 0;
+z-index:1000;
+}
+
+nav .nav-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav h2{
+color:#fff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+}
+
+/* BUTTONS */
+.btn{
+padding:12px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:15px;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#1e63ff;
+color:#fff;
+}
+
+.btn-primary:hover{
+background:#174ed6;
+}
+
+.btn-outline{
+border:2px solid #fff;
+color:#fff;
+}
+
+.btn-orange{
+background:#ff7a1a;
+color:#fff;
+}
+
+.btn-orange:hover{
+background:#e56710;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#0b1f5c,#0a2f75);
+padding:140px 0 100px 0;
+color:#fff;
+}
+
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.hero-text h1{
+font-size:44px;
+line-height:1.3;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#4da3ff;
+}
+
+.hero-text p{
+color:#d0dcff;
+margin-bottom:20px;
+}
+
+.hero-img{
+flex:1;
+text-align:center;
+}
+
+.hero-img img{
+width:100%;
+max-width:500px;
+}
+
+/* SERVICES */
+.services{
+padding:90px 0;
+text-align:center;
+}
+
+.services h2{
+font-size:34px;
+}
+
+.services p{
+color:#666;
+margin-bottom:50px;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#fff;
+padding:30px 20px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:90px;
+margin-bottom:15px;
+}
+
+/* TRANSFORM */
+.transform{
+background:linear-gradient(135deg,#0b1f5c,#0a2f75);
+padding:100px 0;
+color:#fff;
+}
+
+.transform-content{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.transform-text{
+flex:1;
+min-width:300px;
+}
+
+.transform-text h2{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.transform-text ul{
+margin:20px 0;
+}
+
+.transform-text li{
+margin-bottom:10px;
+}
+
+.transform-img{
+flex:1;
+text-align:center;
+}
+
+.transform-img img{
+width:100%;
+max-width:500px;
+}
+
+/* PORTFOLIO */
+.portfolio{
+padding:90px 0;
+text-align:center;
+}
+
+.portfolio h2{
+font-size:34px;
+}
+
+.portfolio p{
+color:#666;
+margin-bottom:50px;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.portfolio-card{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.portfolio-card:hover{
+transform:translateY(-8px);
+}
+
+.portfolio-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.portfolio-card h4{
+padding:15px;
+}
+
+/* FOOTER */
+footer{
+background:#0a2f75;
+color:#fff;
+padding:25px;
+text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero-text h1{
+font-size:32px;
+}
+nav ul{
+display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container nav-content">
+<h2>WebCraft</h2>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-content">
+
+<div class="hero-text">
+<h1>Crafting <span>Modern</span>, High-Performance Websites</h1>
+<p>We help businesses thrive online with custom, fast, and SEO-friendly websites.</p>
+<a href="#" class="btn btn-primary">Get Started</a>
+<a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+</div>
+
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+</div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+
+<h2>Our Services</h2>
+<p>We Build Websites That Drive Success</p>
+
+<div class="service-grid">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+<h3>Website Development</h3>
+<p>Custom websites built with modern technologies.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/906/906175.png">
+<h3>Responsive Design</h3>
+<p>Perfect layout on all devices.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/891/891419.png">
+<h3>E-commerce Solutions</h3>
+<p>Complete online store development.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+<h3>SEO Optimization</h3>
+<p>Boost rankings and grow traffic.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TRANSFORM -->
+<section class="transform">
+<div class="container transform-content">
+
+<div class="transform-text">
+<h2>Transforming Your Vision into Reality</h2>
+<p>We build fast, secure and visually stunning websites.</p>
+
+<ul>
+<li>✔ Custom Web Design</li>
+<li>✔ SEO & Performance Optimization</li>
+<li>✔ Ongoing Support</li>
+</ul>
+
+<a href="#" class="btn btn-orange">Get a Free Quote</a>
+</div>
+
+<div class="transform-img">
+<img src="https://images.unsplash.com/photo-1537432376769-00a3e8f80b8a">
+</div>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+<div class="container">
+
+<h2>Portfolio</h2>
+<p>Our Recent Projects</p>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
+<h4>Digital Marketing Firm</h4>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<h4>E-commerce Store</h4>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<h4>Tech Startup</h4>
+</div>
+
+</div>
+
+<a href="#" class="btn btn-primary" style="margin-top:40px;">View All Projects</a>
+
+</div>
+</section>
+
+<footer id="contact">
+© 2026 WebCraft Agency | All Rights Reserved
+</footer>
+
+</body>
+</html>
