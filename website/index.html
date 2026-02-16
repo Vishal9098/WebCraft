@@ -3,243 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Services</title>
-
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<title>WebCraft Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-html, body {
-  font-family: "Libre Baskerville", serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;overflow-x:hidden}
-
-/* ================= NAVBAR ================= */
-.navbar{
-  background:#111;
-}
-.navbar-brand{
-  font-weight:700;
-  letter-spacing:1px;
-}
-.navbar-nav .nav-link{
-  color:#ddd !important;
-  font-size:14px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-.navbar-nav .nav-link:hover{
-  color:#fff !important;
+body{
+background:#f4f7fc;
+color:#222;
 }
 
-/* ================= SLIDER ================= */
-.banner-img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
 }
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+background:#0a2f75;
+padding:15px 0;
+z-index:1000;
+}
+
+.nav-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav h2{
+color:#fff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+}
+
+/* Hamburger */
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#fff;
+cursor:pointer;
+}
+
+/* BUTTONS */
+.btn{
+padding:12px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:15px;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#1e63ff;
+color:#fff;
+}
+
+.btn-outline{
+border:2px solid #fff;
+color:#fff;
+}
+
+.btn-orange{
+background:#ff7a1a;
+color:#fff;
+}
+
+/* HERO */
+.hero{
+background:linear-gradient(135deg,#0b1f5c,#0a2f75);
+padding:140px 0 100px 0;
+color:#fff;
+}
+
+.hero-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:44px;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#4da3ff;
+}
+
+.hero-text p{
+color:#d0dcff;
+margin-bottom:20px;
+}
+
+.hero-img{
+flex:1;
+text-align:center;
+}
+
+.hero-img img{
+width:100%;
+max-width:500px;
+}
+
+/* SERVICES */
+.services{
+padding:90px 0;
+text-align:center;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.card{
+background:#fff;
+padding:30px 20px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card img{
+width:90px;
+margin-bottom:15px;
+}
+
+/* TRANSFORM */
+.transform{
+background:linear-gradient(135deg,#0b1f5c,#0a2f75);
+padding:100px 0;
+color:#fff;
+}
+
+.transform-content{
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.transform-text{
+flex:1;
+}
+
+.transform-img{
+flex:1;
+text-align:center;
+}
+
+.transform-img img{
+width:100%;
+max-width:500px;
+}
+
+/* PORTFOLIO */
+.portfolio{
+padding:90px 0;
+text-align:center;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.portfolio-card{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.portfolio-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+background:#0a2f75;
+color:#fff;
+padding:25px;
+text-align:center;
+}
+
+/* ===================== */
+/* MOBILE RESPONSIVE */
+/* ===================== */
+
+@media(max-width:992px){
+
+.service-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.portfolio-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero-content,
+.transform-content{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:32px;
+}
+
+}
+
 @media(max-width:768px){
-  .banner-img{height:230px}
+
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0a2f75;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
 }
 
-/* ================= GRID ================= */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-  justify-items:center;
+nav ul.active{
+display:flex;
 }
 
-/* ================= CARD ================= */
-.nakoda-card{
-  width:100%;
-  max-width:300px;
-  background:#f3f3f3;
-  border-radius:28px;
-  padding:18px;
-  text-decoration:none;
-  box-shadow:0 14px 30px rgba(0,0,0,.18);
-}
-.nakoda-img{
-  width:100%;
-  height:160px;
-  background:#fff;
-  border-radius:22px;
-  padding:10px;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);
-}
-.nakoda-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:16px;
-}
-.nakoda-title{
-  margin-top:12px;
-  text-align:center;
-  font-size:15px;
-  font-weight:500;
-  color:#333;
+.menu-toggle{
+display:block;
 }
 
-/* ================= FLOAT BUTTON ================= */
-.float-buttons{
-  position:fixed;
-  left:16px;
-  bottom:110px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  z-index:9999;
-}
-.float-buttons a{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-.float-buttons i{
-  font-size:32px;
-  color:#fff;
-}
-.whatsapp{background:#25D366}
-.call{background:#1e88e5}
-
-/* ================= LOGO STYLE ================= */
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  padding:6px 14px;
-  background:#fff;
-  border-radius:8px;
-}
-.site-logo{
-  height:40px;
-  width:auto;
-  object-fit:contain;
+.service-grid{
+grid-template-columns:1fr;
 }
 
-/* ---------- DESKTOP ONLY ---------- */
-@media (min-width: 992px){
-  .logo-wrap{
-    padding:10px 18px;
-    border-radius:10px;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
-  }
-  .site-logo{
-    height:52px;
-  }
+.portfolio-grid{
+grid-template-columns:1fr;
 }
 
-/* ================= SLIDER ================= */
-.banner-img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  background:#000;
-}
-@media(max-width:768px){
-  .banner-img{
-    height:200px;
-    object-fit:cover;
-  }
+.btn{
+width:100%;
+text-align:center;
 }
 
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-  }
-  .nakoda-card{
-    aspect-ratio:auto;
-    border:none;
-    border-radius:22px;
-    background:#f2f2f2;
-    padding:10px;
-    box-shadow:0 8px 18px rgba(0,0,0,0.18), 0 3px 8px rgba(0,0,0,0.12);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  .nakoda-img{
-    width:100%;
-    height:90px;
-    background:#fff;
-    border-radius:18px;
-    padding:6px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  }
-  .nakoda-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:14px;
-  }
-  .nakoda-title{
-    margin-top:6px;
-    font-size:11px;
-    font-weight:600;
-    color:#333;
-    text-align:center;
-    line-height:1.25;
-  }
-}
-
-/* ================= DESKTOP ================= */
-@media (min-width: 992px){
-  .navbar{
-    padding:18px 0;
-  }
-  .navbar-brand{
-    font-size:22px;
-    letter-spacing:2px;
-  }
-  .navbar-nav .nav-link{
-    font-size:15px;
-    margin-left:22px;
-  }
-  .banner-img{
-    height:520px;
-  }
-  .product-grid{
-    grid-template-columns:repeat(4, 1fr);
-    gap:30px;
-    margin-top:40px;
-  }
-  .nakoda-card{
-    max-width:100%;
-    padding:22px;
-    transition:0.35s ease;
-  }
-  .nakoda-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 22px 45px rgba(0,0,0,.28);
-  }
-  .nakoda-img{
-    height:190px;
-  }
-  .nakoda-title{
-    font-size:16px;
-    font-weight:600;
-    margin-top:14px;
-  }
-  .float-buttons{
-    left:26px;
-    bottom:140px;
-  }
 }
 
 </style>
@@ -247,588 +285,144 @@ body{background:#fff;overflow-x:hidden}
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
-    <a class="navbar-brand logo-wrap" href="#">
-      <img src="images/pawan2.jpg" alt="Pawan Electrician Logo" class="site-logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-     
-    <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            All Services
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <!-- MAIN SERVICES -->
-            <li><a class="dropdown-item" href="product.html?service=refrigerator">❄️ Refrigerator Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=microwave">🍳 Microwave Oven Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=chimney">🧹 Kitchen Chimney Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=washingmachine">🧺 Washing Machine Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=ac">❄️ Air Conditioner Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=geyser">💧 Geyser / Water Heater</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="product.html?service=ro">💦 RO Water Purifier</a></li>
-            <li><a class="dropdown-item" href="product.html?service=fan">🌀 Ceiling Fan Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=tv">📺 LED / LCD TV Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=inverter">🔋 Inverter / Battery Repair</a></li>
-            <li><a class="dropdown-item" href="product.html?service=wiring">⚡ Electrical Wiring</a></li>
-            <li><a class="dropdown-item" href="product.html?service=switch">🔌 Switch & Socket Repair</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="product.html?service=basicelectrical">🔧 Basic Electrical Services</a></li>
-            <li><a class="dropdown-item" href="product.html?service=wiringservices">⚡ Wiring Services</a></li>
-            <li><a class="dropdown-item" href="product.html?service=lightingservices">💡 Lighting Services</a></li>
-            <li><a class="dropdown-item" href="product.html?service=fanpowerservices">🌀 Fan & Power Appliances</a></li>
-            <li><a class="dropdown-item" href="product.html?service=electricalinstallations">🔌 Electrical Installations</a></li>
-            <li><a class="dropdown-item" href="product.html?service=safetymaintenance">✅ Safety & Maintenance</a></li>
-          </ul>
-        </li>
-   
+<nav>
+<div class="container nav-content">
+<h2>WebCraft</h2>
 
-       
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://wa.me/917354149532">Contact</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<ul id="nav-links">
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
 </nav>
 
-<!-- ================= SLIDER ================= -->
-<div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#mainSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/qq.jpg" class="banner-img">
-    </div>
-    <div class="carousel-item">
-      <img src="images/q.jpg" class="banner-img">
-    </div>
-    <div class="carousel-item">
-      <img src="images/x.jpg" class="banner-img">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#mainSlider" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-content">
+
+<div class="hero-text">
+<h1>Crafting <span>Modern</span>, High-Performance Websites</h1>
+<p>We help businesses thrive online with custom, fast, and SEO-friendly websites.</p>
+<a href="#" class="btn btn-primary">Get Started</a>
+<a href="#portfolio" class="btn btn-outline">View Portfolio</a>
 </div>
 
-<!-- ================= SERVICES CARDS ================= -->
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+</div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
 <div class="container">
-  <div class="product-grid">
-    
-    <!-- Refrigerator Repair -->
-    <a href="product.html?service=refrigerator" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/f.jpg" alt="Refrigerator Repair">
-      </div>
-      <div class="nakoda-title">❄️ Refrigerator Technician</div>
-    </a>
-    
-    <!-- Microwave Repair -->
-    <a href="product.html?service=microwave" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/m.jpg" alt="Microwave Repair">
-      </div>
-      <div class="nakoda-title">🍳 Microwave Oven Technician</div>
-    </a>
-    
-    <!-- Kitchen Chimney Repair -->
-    <a href="product.html?service=chimney" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/kitchen_chimney.png" alt="Kitchen Chimney Repair">
-      </div>
-      <div class="nakoda-title">🧹 Chimney Technician</div>
-    </a>
-    
-    
-    <!-- RO Water Purifier -->
-    <a href="product.html?service=ro" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/ro.avif" alt="RO Repair">
-      </div>
-      <div class="nakoda-title">💦 Water Purifier Technician</div>
-    </a>
-    
-    <!-- Ceiling Fan Repair -->
-    <a href="product.html?service=fan" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/cailing_fan_repair.jpg" alt="Fan Repair">
-      </div>
-      <div class="nakoda-title">🌀 Ceiling Fan Repair</div>
-    </a>
-    
-    <!-- LED TV Repair -->
-    <a href="product.html?service=tv" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/l.jpg" alt="TV Repair">
-      </div>
-      <div class="nakoda-title">📺 LED / LCD TV Repair</div>
-    </a>
-    
-    <!-- Inverter Repair -->
-    <a href="product.html?service=inverter" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/e.jpg" alt="Inverter Repair">
-      </div>
-      <div class="nakoda-title">🔋 Inverter Technician</div>
-    </a>
-    
-    <!-- Electrical Wiring -->
-    <a href="product.html?service=wiring" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/Wiring_Services.jpg" alt="Electrical Wiring">
-      </div>
-      <div class="nakoda-title">⚡ Electrical Wiring</div>
-    </a>
-    
-    <!-- Switch & Socket -->
-    <a href="product.html?service=switch" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/swich_bord_repair.jpg" alt="Switch Repair">
-      </div>
-      <div class="nakoda-title">🔌 Switch & Socket Repair</div>
-    </a>
 
-    <!-- ============ 6 CATEGORY CARDS WITH CORRECT URL ============ -->
+<h2>Our Services</h2>
+<p>We Build Websites That Drive Success</p>
 
-    <!-- 1️⃣ BASIC ELECTRICAL SERVICES -->
-    <a href="product.html?service=basicelectrical" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/electric_service.jpg" alt="Basic Electrical Services">
-      </div>
-      <div class="nakoda-title">🔧 Basic Electrical Services</div>
-    </a>
+<div class="service-grid">
 
-    <!-- 2️⃣ WIRING SERVICES -->
-    <a href="product.html?service=wiringservices" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/s.jpg" alt="Wiring Services">
-      </div>
-      <div class="nakoda-title">⚡ Wiring Services</div>
-    </a>
-
-    <!-- 3️⃣ LIGHTING SERVICES -->
-    <a href="product.html?service=lightingservices" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images\Lighting_Services.jpg" alt="Lighting Services">
-      </div>
-      <div class="nakoda-title">💡 Lighting Services</div>
-    </a>
-
-    <!-- 4️⃣ FAN & POWER APPLIANCES -->
-    <a href="product.html?service=fanpowerservices" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/fan.jpg" alt="Fan & Power Appliances">
-      </div>
-      <div class="nakoda-title">🌀 Fan & Power Appliances</div>
-    </a>
-
-    <!-- 5️⃣ ELECTRICAL INSTALLATIONS -->
-    <a href="product.html?service=electricalinstallations" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/Inverter_Installation.webp" alt="Electrical Installations">
-      </div>
-      <div class="nakoda-title">🔌 Electrical Installations</div>
-    </a>
-
-    <!-- 6️⃣ SAFETY & MAINTENANCE -->
-    <a href="product.html?service=safetymaintenance" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/jj.jpg" alt="Safety & Maintenance">
-      </div>
-      <div class="nakoda-title">✅ Safety & Maintenance</div>
-    </a>
-
-    <!-- Washing Machine Repair -->
-    <a href="product.html?service=washingmachine" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/washing_mashine_repair.jpg" alt="Washing Machine Repair">
-      </div>
-      <div class="nakoda-title">🧺 Fully Automatic Washing Machine Technician</div>
-    </a>
-    
-    <!-- AC Repair -->
-    <a href="product.html?service=ac" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/AC_Electrical_Wiring.avif" alt="AC Repair">
-      </div>
-      <div class="nakoda-title">❄️ Air Conditioning (AC) Technician</div>
-    </a>
-    
-    <!-- Geyser Repair -->
-    <a href="product.html?service=geyser" class="nakoda-card">
-      <div class="nakoda-img">
-        <img src="images/Geyser_Electrical_Connection.jpg" alt="Geyser Repair">
-      </div>
-      <div class="nakoda-title">💧 Geyser / Water Heater Technician</div>
-    </a>
-    
-  </div>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png">
+<h3>Website Development</h3>
+<p>Custom websites built with modern technologies.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
 </div>
 
-<!-- #####################################  Google Review section  ########################################## -->
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/906/906175.png">
+<h3>Responsive Design</h3>
+<p>Perfect layout on all devices.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
 
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<!-- <script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-ae23fcb8-098d-4c76-beef-2c8dba5df3cc" data-elfsight-app-lazy></div> -->
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/891/891419.png">
+<h3>E-commerce Solutions</h3>
+<p>Complete online store development.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
 
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+<h3>SEO Optimization</h3>
+<p>Boost rankings and grow traffic.</p>
+<a href="#" class="btn btn-orange">Learn More</a>
+</div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="nakoda-footer">
-  <div class="container">
+</div>
+</div>
+</section>
 
-    <!-- TOP ROW - Screenshot 2026-02-13 233323.png ke according -->
-    <div class="footer-top">
-      <!-- <div class="footer-about">
-        <div class="about-box">
-          <img src="pawan2.jpg" alt="Pawan Services Logo" class="about-logo">
-          Pawan Services is a leading Electician and  Services Platform of India.
-        </div>
-      </div> -->
-      <div class="about-box">
-        <img src="images/pawan2.jpg" alt="Pawan Services Logo" class="about-logo">
-        <p>Pawan Services is a leading Electrician and Services Platform of India.</p>
-      </div>
+<!-- TRANSFORM -->
+<section class="transform">
+<div class="container transform-content">
 
-      <div class="footer-col">
-          <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&compose=new&to=help.goodwillhome@gmail.com"target="_blank">help.goodwillhome@gmail.com</a>
-        </li>
+<div class="transform-text">
+<h2>Transforming Your Vision into Reality</h2>
+<p>We build fast, secure and visually stunning websites.</p>
 
-         
-      
-          
-        </ul>
-        
-      </div>
-      <div class="footer-col">
-        <h4>Contact Info</h4>
-        <ul>
-          <li>Bhopal, Madhya Pradesh</li>
-          <!-- <li>+91-7354149532</li> -->
-          
-          <li class="small">We reply within  30 minute </li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Working Hours</h4>
-        <p>Timing: 24*7</p>
-        <p>Monday To Sunday</p>
-        <!-- <div class="social-icons">
-          <i class="bi bi-facebook"></i>
-          <i class="bi bi-linkedin"></i>
-          <i class="bi bi-instagram"></i>
-        </div> -->
-      </div>
-    </div>
+<ul>
+<li>✔ Custom Web Design</li>
+<li>✔ SEO & Performance Optimization</li>
+<li>✔ Ongoing Support</li>
+</ul>
 
-    <!-- SERVICES - SIRF IMAGE WALI (SCREENSHOT 2026-02-12 191024.PNG) -->
-    <div class="footer-services">
-      <h3>OUR SERVICES</h3>
-      <div class="services-grid">
-        <!-- Column 1 - Main Repair Services (6 items) -->
-        <ul>
-          <li>Refrigerator Repair</li>
-          <li>Microwave Oven Repair</li>
-          <li>Kitchen Chimney Repair</li>
-          <li>Washing Machine Repair</li>
-          <li>Air Conditioner Repair</li>
-          <li>Geyser / Water Heater</li>
-        </ul>
+<a href="#" class="btn btn-orange">Get a Free Quote</a>
+</div>
 
-        <!-- Column 2 - Additional Repair Services (6 items) -->
-        <ul>
-          <li>RO Water Purifier</li>
-          <li>Ceiling Fan Repair</li>
-          <li>LED / LCD TV Repair</li>
-          <li>Inverter / Battery Repair</li>
-          <li>Electrical Wiring</li>
-          <li>Switch & Socket Repair</li>
-        </ul>
+<div class="transform-img">
+<img src="https://images.unsplash.com/photo-1537432376769-00a3e8f80b8a">
+</div>
 
-        <!-- Column 3 - Electrical Services (6 items) -->
-        <ul>
-          <li>Basic Electrical Services</li>
-          <li>Wiring Services</li>
-          <li>Lighting Services</li>
-          <li>Fan & Power Appliances</li>
-          <li>Electrical Installations</li>
-          <li>Safety & Maintenance</li>
-        </ul>
-      </div>
-    </div>
+</div>
+</section>
 
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      Copyright © 2026 All Rights Reserved By Web Craft Agency Services
-    </div>
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+<div class="container">
 
-  </div>
+<h2>Portfolio</h2>
+<p>Our Recent Projects</p>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d">
+<h4>Digital Marketing Firm</h4>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<h4>E-commerce Store</h4>
+</div>
+
+<div class="portfolio-card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<h4>Tech Startup</h4>
+</div>
+
+</div>
+
+<a href="#" class="btn btn-primary" style="margin-top:40px;">View All Projects</a>
+
+</div>
+</section>
+
+<footer id="contact">
+© 2026 WebCraft Agency | All Rights Reserved
 </footer>
 
-<style>
-/* ================= FOOTER STYLES ================= */
-.nakoda-footer{
-  background:#111;
-  color:#ddd;
-  padding:70px 0 25px;
+<script>
+function toggleMenu(){
+document.getElementById("nav-links").classList.toggle("active");
 }
-.nakoda-footer h4{
-  color:#fff;
-  font-size:17px;
-  margin-bottom:18px;
-}
-.nakoda-footer ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-.nakoda-footer ul li{
-  font-size:14px;
-  padding:6px 0;
-  color:#ccc;
-}
-.nakoda-footer p{
-  font-size:14px;
-  color:#ccc;
-}
-.footer-top{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:50px;
-  margin-bottom:60px;
-}
-.about-box{
-  background:#fff;
-  color:#111;
-  padding:25px;
-  border-radius:6px;
-  font-size:15px;
-  line-height:1.7;
-}
-.social-icons{
-  margin-top:15px;
-}
-.social-icons i{
-  font-size:18px;
-  margin-right:12px;
-  cursor:pointer;
-}
-.footer-services h3{
-  text-align:center;
-  color:#fff;
-  font-size:18px;
-  margin-bottom:35px;
-  letter-spacing:1px;
-}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);  /* 3 columns for image wali services */
-  gap:40px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.services-grid ul li{
-  font-size:14px;
-}
-.footer-bottom{
-  border-top:1px solid #333;
-  margin-top:60px;
-  padding-top:18px;
-  text-align:center;
-  font-size:13px;
-  color:#aaa;
-}
-@media(max-width:992px){
-  .services-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:30px;
-  }
-}
-@media(max-width:768px){
-  .footer-top{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-  .services-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:20px;
-  }
-  .about-box{
-    font-size:14px;
-  }
-}
-@media(max-width:480px){
-  .services-grid{
-    grid-template-columns:1fr;
-  }
-}
-.about-box{
-  background:#fff;
-  color:#111;
-  padding:25px;
-  border-radius:6px;
-  font-size:15px;
-  line-height:1.7;
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
+</script>
 
-.about-logo{
-  width:70px;
-  height:auto;
-  display:block;
-}
-
-.about-box p{
-  margin:0;
-}
-.footer-top{
-  display:grid;
-  grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:40px;
-  margin-bottom:60px;
-}
-
-/* ABOUT BOX */
-.about-box{
-  background:#fff;
-  color:#111;
-  padding:20px;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.about-logo{
-  width:75px;
-  height:auto;
-}
-
-.about-box p{
-  margin:0;
-  font-size:14px;
-  line-height:1.6;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-
-@media(max-width:992px){
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:768px){
-  .footer-top{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-
-  .about-box{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .about-logo{
-    width:65px;
-  }
-}
-
-@media(max-width:480px){
-  .about-logo{
-    width:55px;
-  }
-
-  .about-box{
-    padding:15px;
-  }
-}
-
-</style>
-
-
-
-<!-- Floating Gmail Button -->
-
-<div class="float-buttons">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&compose=new&to=help.goodwillhome@gmail.com"
-     target="_blank" 
-     class="gmail">
-    <i class="bi bi-envelope-fill"></i>
-  </a>
-</div>
-
-
-<!-- CSS -->
-<style>
-  .float-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-  }
-
-  .gmail {
-    background-color: #D44638;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-  }
-
-  .gmail:hover {
-    background-color: #b23121;
-    transform: scale(1.1);
-  }
-
-  /* 📱 Mobile Responsive */
-  @media (max-width: 768px) {
-    .float-buttons {
-      bottom: 15px;
-      right: 15px;
-    }
-
-    .gmail {
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-    }
-  }
-</style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
