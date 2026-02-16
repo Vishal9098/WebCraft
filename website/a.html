@@ -30,12 +30,12 @@ margin:auto;
 nav{
 position:fixed;
 width:100%;
-background:rgba(10,30,80,0.95);
+background:#0a2f75;
 padding:15px 0;
 z-index:1000;
 }
 
-nav .nav-content{
+.nav-content{
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -57,6 +57,14 @@ text-decoration:none;
 font-weight:500;
 }
 
+/* Hamburger */
+.menu-toggle{
+display:none;
+font-size:28px;
+color:#fff;
+cursor:pointer;
+}
+
 /* BUTTONS */
 .btn{
 padding:12px 26px;
@@ -73,10 +81,6 @@ background:#1e63ff;
 color:#fff;
 }
 
-.btn-primary:hover{
-background:#174ed6;
-}
-
 .btn-outline{
 border:2px solid #fff;
 color:#fff;
@@ -85,10 +89,6 @@ color:#fff;
 .btn-orange{
 background:#ff7a1a;
 color:#fff;
-}
-
-.btn-orange:hover{
-background:#e56710;
 }
 
 /* HERO */
@@ -102,17 +102,15 @@ color:#fff;
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
+gap:40px;
 }
 
 .hero-text{
 flex:1;
-min-width:300px;
 }
 
 .hero-text h1{
 font-size:44px;
-line-height:1.3;
 margin-bottom:20px;
 }
 
@@ -141,18 +139,9 @@ padding:90px 0;
 text-align:center;
 }
 
-.services h2{
-font-size:34px;
-}
-
-.services p{
-color:#666;
-margin-bottom:50px;
-}
-
 .service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:25px;
 }
 
@@ -161,11 +150,6 @@ background:#fff;
 padding:30px 20px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
 }
 
 .card img{
@@ -183,26 +167,11 @@ color:#fff;
 .transform-content{
 display:flex;
 align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
+gap:40px;
 }
 
 .transform-text{
 flex:1;
-min-width:300px;
-}
-
-.transform-text h2{
-font-size:34px;
-margin-bottom:20px;
-}
-
-.transform-text ul{
-margin:20px 0;
-}
-
-.transform-text li{
-margin-bottom:10px;
 }
 
 .transform-img{
@@ -221,18 +190,9 @@ padding:90px 0;
 text-align:center;
 }
 
-.portfolio h2{
-font-size:34px;
-}
-
-.portfolio p{
-color:#666;
-margin-bottom:50px;
-}
-
 .portfolio-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:25px;
 }
 
@@ -241,21 +201,12 @@ background:#fff;
 border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.portfolio-card:hover{
-transform:translateY(-8px);
 }
 
 .portfolio-card img{
 width:100%;
 height:200px;
 object-fit:cover;
-}
-
-.portfolio-card h4{
-padding:15px;
 }
 
 /* FOOTER */
@@ -266,15 +217,69 @@ padding:25px;
 text-align:center;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
+/* ===================== */
+/* MOBILE RESPONSIVE */
+/* ===================== */
+
+@media(max-width:992px){
+
+.service-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.portfolio-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero-content,
+.transform-content{
+flex-direction:column;
+text-align:center;
+}
+
 .hero-text h1{
 font-size:32px;
 }
+
+}
+
+@media(max-width:768px){
+
 nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0a2f75;
+flex-direction:column;
+align-items:center;
 display:none;
+padding:20px 0;
 }
+
+nav ul.active{
+display:flex;
 }
+
+.menu-toggle{
+display:block;
+}
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
+.portfolio-grid{
+grid-template-columns:1fr;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+}
+
 </style>
 </head>
 
@@ -283,11 +288,15 @@ display:none;
 <nav>
 <div class="container nav-content">
 <h2>WebCraft</h2>
-<ul>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<ul id="nav-links">
 <li><a href="#services">Services</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </div>
 </nav>
 
@@ -408,6 +417,12 @@ display:none;
 <footer id="contact">
 © 2026 WebCraft Agency | All Rights Reserved
 </footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
